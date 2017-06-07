@@ -1,0 +1,17 @@
+{
+  "name": "lee-rn-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "bundle-android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output ../app/src/main/assets/index.android.bundle --assets-dest ../app/src/main/res/"
+  },
+  "author": "xpleemoon",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.0.0-alpha.6",
+    "react-native": "^0.44.3"
+  }
+}
