@@ -61,12 +61,13 @@ class LeeRNSample extends React.Component {
         });
     }
 
-    componentDidMount() {
+    componentWillMount() {
         //注册事件监听
         DeviceEventEmitter.addListener('onReceiveEvent', this.onReceiveEvent);
     }
 
-    componentWillMount() {
+    componentWillUnmount() {
+        //移除事件监听
         DeviceEventEmitter.removeListener('onReceiveEvent', this.onReceiveEvent);
     }
 
