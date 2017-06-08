@@ -11,25 +11,36 @@ import {
     View,
     TouchableHighlight,
     TextInput,
+    DeviceEventEmitter,
 } from 'react-native';
 import {LeeToast, LeeDialog, LeeCommunication} from './js/LeeNative';
 
 class LeeRNSample extends React.Component {
+    onReceiveEvent = (event) => {
+            this.setState({
+                    text: event.result,
+            });
+    }
+
     constructor(props) {
         super(props);
-        this.state = { text: '请点击按钮，测试通信' };
+        this.state = {
+            text: '请点击按钮，测试通信',
+        };
     }
 
     showToast() {
         LeeToast.show('我是原生Toast',LeeToast.SHORT);
-        let text = "点击Toast按钮";
-        this.setState({text});
+        this.setState({
+            text: "点击Toast按钮",
+        });
     }
 
     showDialog() {
         LeeDialog.show('Welcome to RN', '我是原生Dialog');
-        let text = "点击Dialog按钮";
-        this.setState({text});
+        this.setState({
+            text: "点击Dialog按钮",
+        });
     }
 
     callback() {
@@ -41,6 +52,22 @@ class LeeRNSample extends React.Component {
     async promise() {
         let text = await LeeCommunication.promise("Promise通信");
         this.setState({text});
+    }
+
+    showSendEvent() {
+        LeeCommunication.showSendEvent();
+        this.setState({
+                    text: "点击Send Event通信按钮",
+        });
+    }
+
+    componentDidMount() {
+        //注册事件监听
+        DeviceEventEmitter.addListener('onReceiveEvent', this.onReceiveEvent);
+    }
+
+    componentWillMount() {
+        DeviceEventEmitter.removeListener('onReceiveEvent', this.onReceiveEvent);
     }
 
     render() {
@@ -56,7 +83,10 @@ class LeeRNSample extends React.Component {
                      <Text style={styles.hello}>Callback通信</Text>
                 </TouchableHighlight>
                 <TouchableHighlight onPress={() => this.promise()}>
-                                     <Text style={styles.hello}>Promise通信</Text>
+                     <Text style={styles.hello}>Promise通信</Text>
+                </TouchableHighlight>
+                <TouchableHighlight onPress={() => this.showSendEvent()}>
+                     <Text style={styles.hello}>Send Event通信</Text>
                 </TouchableHighlight>
                 <TextInput
                         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
