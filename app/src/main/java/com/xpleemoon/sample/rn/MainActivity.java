@@ -1,11 +1,8 @@
-package com.xpleemoon.sample;
+package com.xpleemoon.sample.rn;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import com.xpleemoon.sample.rn.CommunicationActivity;
-import com.xpleemoon.sample.rn.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -22,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.native_rn_communication)
     void communication() {
-        Intent intent = new Intent(this, CommunicationActivity.class);
+        Intent intent = new Intent(this, LeeRNActivity.class);
         startActivity(intent);
     }
 }

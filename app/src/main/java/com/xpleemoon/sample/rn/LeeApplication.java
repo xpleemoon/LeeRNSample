@@ -1,4 +1,4 @@
-package com.xpleemoon.sample;
+package com.xpleemoon.sample.rn;
 
 import android.app.Application;
 
@@ -7,7 +7,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.xpleemoon.sample.rn.BuildConfig;
-import com.xpleemoon.sample.rn.LeeReactPackage;
+import com.xpleemoon.sample.rn.pkg.LeeReactPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
  * Created by xplee on 2017/6/7.
  */
 
-public class LeeSampleApplication extends Application implements ReactApplication {
+public class LeeApplication extends Application implements ReactApplication {
     private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
         @Override
         public boolean getUseDeveloperSupport() {

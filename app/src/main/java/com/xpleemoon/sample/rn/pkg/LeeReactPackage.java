@@ -1,11 +1,12 @@
-package com.xpleemoon.sample.rn;
+package com.xpleemoon.sample.rn.pkg;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
-import com.xpleemoon.sample.LeeSampleApplication;
+import com.xpleemoon.sample.rn.LeeApplication;
+import com.xpleemoon.sample.rn.module.LeeReactCommunication;
 import com.xpleemoon.sample.rn.module.LeeReactDialog;
 import com.xpleemoon.sample.rn.module.LeeReactToast;
 
@@ -14,7 +15,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * 用于注册自定义模块，这个package需要在{@link LeeSampleApplication#getReactNativeHost()}返回对象的getPackages()方法中提供
+ * 用于注册自定义模块，这个package需要在{@link LeeApplication#getReactNativeHost()}返回对象的getPackages()方法中提供
  * <pre>
  * protected List<ReactPackage> getPackages() {
  *     return Arrays.<ReactPackage>asList(
@@ -31,6 +32,7 @@ public class LeeReactPackage implements ReactPackage {
         List<NativeModule> modules = new ArrayList<>();
         modules.add(new LeeReactToast(reactContext)); // 添加toast模块
         modules.add(new LeeReactDialog(reactContext));
+        modules.add(new LeeReactCommunication(reactContext));
         return modules;
     }
 

@@ -13,6 +13,7 @@ import com.facebook.react.bridge.ReactMethod;
  * @author xpleemoon
  */
 public class LeeReactDialog extends ReactContextBaseJavaModule {
+
     public LeeReactDialog(ReactApplicationContext reactContext) {
         super(reactContext);
     }
@@ -33,6 +34,7 @@ public class LeeReactDialog extends ReactContextBaseJavaModule {
                         dialog.dismiss();
                     }
                 })
+                .setNegativeButton("取消", null)
                 .show();
     }
 }

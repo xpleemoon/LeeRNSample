@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
  * Created by xplee on 2017/5/31.
  */
 
-public class CommunicationActivity extends ReactActivity {
+public class LeeRNActivity extends ReactActivity {
     @Nullable
     @Override
     protected String getMainComponentName() {
