@@ -1,6 +1,3 @@
-/**
- * Created by xplee on 2017/5/31.
- */
 'use strict';
 
 import React from 'react';
@@ -13,13 +10,14 @@ import {
     TextInput,
     DeviceEventEmitter,
 } from 'react-native';
-import {LeeToast, LeeDialog, LeeCommunication} from './js/LeeNative';
+import {LeeStyles,}from './res/style/GlobalStyles';
+import {LeeToast, LeeDialog, LeeCommunication,} from './js/LeeNative';
 
 class LeeRNSample extends React.Component {
     onReceiveEvent = (event) => {
-            this.setState({
-                    text: event.result,
-            });
+        this.setState({
+            text: event.result,
+        });
     }
 
     constructor(props) {
@@ -30,7 +28,7 @@ class LeeRNSample extends React.Component {
     }
 
     showToast() {
-        LeeToast.show('我是原生Toast',LeeToast.SHORT);
+        LeeToast.show('我是原生Toast', LeeToast.SHORT);
         this.setState({
             text: "点击Toast按钮",
         });
@@ -57,7 +55,7 @@ class LeeRNSample extends React.Component {
     showSendEvent() {
         LeeCommunication.showSendEvent();
         this.setState({
-                    text: "点击Send Event通信按钮",
+            text: "点击Send Event通信按钮",
         });
     }
 
@@ -73,43 +71,30 @@ class LeeRNSample extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={LeeStyles.container}>
                 <TouchableHighlight onPress={() => this.showToast()}>
-                    <Text style={styles.hello}>调用Toast</Text>
+                    <Text style={LeeStyles.text}>调用Toastaaa</Text>
                 </TouchableHighlight>
                 <TouchableHighlight onPress={() => this.showDialog()}>
-                    <Text style={styles.hello}>调用Dialog</Text>
+                    <Text style={LeeStyles.text}>调用Dialog</Text>
                 </TouchableHighlight>
                 <TouchableHighlight onPress={() => this.callback()}>
-                     <Text style={styles.hello}>Callback通信</Text>
+                    <Text style={LeeStyles.text}>Callback通信</Text>
                 </TouchableHighlight>
                 <TouchableHighlight onPress={() => this.promise()}>
-                     <Text style={styles.hello}>Promise通信</Text>
+                    <Text style={LeeStyles.text}>Promise通信</Text>
                 </TouchableHighlight>
                 <TouchableHighlight onPress={() => this.showSendEvent()}>
-                     <Text style={styles.hello}>Send Event通信</Text>
+                    <Text style={LeeStyles.text}>Send Event通信</Text>
                 </TouchableHighlight>
                 <TextInput
-                        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-                        underlineColorAndroid='transparent'
-                        onChangeText={(text) => this.setState({text})}
-                        value={this.state.text}/>
+                    style={LeeStyles.textInput}
+                    onChangeText={(text) => this.setState({text})}
+                    underlineColorAndroid='transparent'
+                    value={this.state.text}/>
             </View>
         )
     }
 }
-var styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        margin:10,
-    },
-    hello: {
-        color: '#527fe4',
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-});
 
 AppRegistry.registerComponent('LeeRNSample', () => LeeRNSample);
