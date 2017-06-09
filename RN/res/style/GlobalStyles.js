@@ -4,6 +4,7 @@ import {StyleSheet,} from 'react-native';
 
 export var LeeStyles = StyleSheet.create({
     container: {
+        flex: 1,
         justifyContent: 'center',
         margin: 10,
     },

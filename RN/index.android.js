@@ -42,9 +42,6 @@ class LeeRNSample extends React.Component {
 
     showSendEvent() {
         LeeCommunication.showSendEvent();
-        this.setState({
-            text: "点击Send Event通信按钮",
-        });
     }
 
     componentWillMount() {

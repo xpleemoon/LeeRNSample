@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.native_rn_communication)
+    @OnClick(R.id.start_rn)
     void communication() {
         Intent intent = new Intent(this, LeeRNActivity.class);
         startActivity(intent);
