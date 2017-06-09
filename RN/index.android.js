@@ -12,6 +12,8 @@ import {
 } from 'react-native';
 import {LeeStyles,}from './res/style/GlobalStyles';
 import {LeeToast, LeeDialog, LeeCommunication,} from './js/LeeNative';
+import LeeTouchable from './js/component/LeeTouchable';
+import LeeTextArea from './js/component/LeeTextArea';
 
 class LeeRNSample extends React.Component {
     onReceiveEvent = (event) => {
@@ -23,22 +25,8 @@ class LeeRNSample extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: '请点击按钮，测试通信',
+            text: '',
         };
-    }
-
-    showToast() {
-        LeeToast.show('我是原生Toast', LeeToast.SHORT);
-        this.setState({
-            text: "点击Toast按钮",
-        });
-    }
-
-    showDialog() {
-        LeeDialog.show('Welcome to RN', '我是原生Dialog');
-        this.setState({
-            text: "点击Dialog按钮",
-        });
     }
 
     callback() {
@@ -72,25 +60,27 @@ class LeeRNSample extends React.Component {
     render() {
         return (
             <View style={LeeStyles.container}>
-                <TouchableHighlight onPress={() => this.showToast()}>
-                    <Text style={LeeStyles.text}>调用Toastaaa</Text>
-                </TouchableHighlight>
-                <TouchableHighlight onPress={() => this.showDialog()}>
-                    <Text style={LeeStyles.text}>调用Dialog</Text>
-                </TouchableHighlight>
-                <TouchableHighlight onPress={() => this.callback()}>
-                    <Text style={LeeStyles.text}>Callback通信</Text>
-                </TouchableHighlight>
-                <TouchableHighlight onPress={() => this.promise()}>
-                    <Text style={LeeStyles.text}>Promise通信</Text>
-                </TouchableHighlight>
-                <TouchableHighlight onPress={() => this.showSendEvent()}>
-                    <Text style={LeeStyles.text}>Send Event通信</Text>
-                </TouchableHighlight>
-                <TextInput
-                    style={LeeStyles.textInput}
-                    onChangeText={(text) => this.setState({text})}
-                    underlineColorAndroid='transparent'
+                <Text>RN调用原生组件</Text>
+                <View style={{flexDirection: 'row', justifyContent: 'center',}}>
+                    <LeeTouchable
+                        onClick={() => LeeToast.show('我是原生Toast', LeeToast.SHORT)}
+                        text='调用Toast'/>
+                    <LeeTouchable
+                        onClick={() => LeeDialog.show('Welcome to RN', '我是原生Dialog')}
+                        text='调用Dialog'/>
+                </View>
+                <Text>RN调用原生组件</Text>
+                <LeeTouchable
+                    onClick={() => this.callback()}
+                    text='Callback通信'/>
+                <LeeTouchable
+                    onClick={() => this.promise()}
+                    text='Promise通信'/>
+                <LeeTouchable
+                    onClick={() => this.showSendEvent()}
+                    text='Send Event通信'/>
+                <LeeTextArea
+                    placeholder='请点击通信按钮，测试通信情况'
                     value={this.state.text}/>
             </View>
         )
