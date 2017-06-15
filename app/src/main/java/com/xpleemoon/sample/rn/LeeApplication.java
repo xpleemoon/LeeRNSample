@@ -6,8 +6,7 @@ import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
-import com.xpleemoon.sample.rn.BuildConfig;
-import com.xpleemoon.sample.rn.pkg.LeeReactPackage;
+import com.xpleemoon.sample.rn.config.LeeRNPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,7 +26,7 @@ public class LeeApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage(),
-                    new LeeReactPackage()/*注册自定义模块*/
+                    new LeeRNPackage()/*注册自定义模块*/
             );
         }
     };

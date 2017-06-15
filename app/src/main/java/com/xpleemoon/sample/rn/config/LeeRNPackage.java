@@ -1,4 +1,4 @@
-package com.xpleemoon.sample.rn.pkg;
+package com.xpleemoon.sample.rn.config;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -6,9 +6,9 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.xpleemoon.sample.rn.LeeApplication;
-import com.xpleemoon.sample.rn.module.LeeReactCommunication;
-import com.xpleemoon.sample.rn.module.LeeReactDialog;
-import com.xpleemoon.sample.rn.module.LeeReactToast;
+import com.xpleemoon.sample.rn.comm.LeeRNCommunication;
+import com.xpleemoon.sample.rn.call.LeeRNDialog;
+import com.xpleemoon.sample.rn.call.LeeRNToast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,13 +26,13 @@ import java.util.List;
  *
  * @author xpleemoon
  */
-public class LeeReactPackage implements ReactPackage {
+public class LeeRNPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(new LeeReactToast(reactContext)); // 添加toast模块
-        modules.add(new LeeReactDialog(reactContext));
-        modules.add(new LeeReactCommunication(reactContext));
+        modules.add(new LeeRNToast(reactContext)); // 添加toast模块
+        modules.add(new LeeRNDialog(reactContext));
+        modules.add(new LeeRNCommunication(reactContext));
         return modules;
     }
 

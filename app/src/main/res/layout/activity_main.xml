@@ -10,12 +10,25 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/start_rn"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="启动React-Native Activity"
-        android:textAllCaps="false" />
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/start_rn_call_native"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="启动RN调用原生Activity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/start_comm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="启动RN与原生通信Activity"
+            android:textAllCaps="false" />
+    </LinearLayout>
 </RelativeLayout>

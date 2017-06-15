@@ -1,17 +1,18 @@
-package com.xpleemoon.sample.rn;
+package com.xpleemoon.sample.rn.comm;
 
 import com.facebook.react.ReactActivity;
 
 import javax.annotation.Nullable;
 
 /**
- * Created by xplee on 2017/5/31.
+ * 原生与RN通信
+ *
+ * @author xpleemoon
  */
-
-public class LeeRNActivity extends ReactActivity {
+public class LeeRNCommActivity extends ReactActivity {
     @Nullable
     @Override
     protected String getMainComponentName() {
-        return "LeeRNSample";
+        return "LeeComm";
     }
 }

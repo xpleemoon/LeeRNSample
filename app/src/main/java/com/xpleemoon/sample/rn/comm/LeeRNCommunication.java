@@ -1,4 +1,4 @@
-package com.xpleemoon.sample.rn.module;
+package com.xpleemoon.sample.rn.comm;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
@@ -20,13 +20,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  * @author xpleemoon
  */
-public class LeeReactCommunication extends ReactContextBaseJavaModule {
+public class LeeRNCommunication extends ReactContextBaseJavaModule {
     public static final String EVENT_RESULT = "result";
     private AtomicInteger mCallbackAtomicInteger = new AtomicInteger();
     private AtomicInteger mPromiseAtomicInteger = new AtomicInteger();
     private AtomicInteger mSendEventAtomicInteger = new AtomicInteger();
 
-    public LeeReactCommunication(ReactApplicationContext reactContext) {
+    public LeeRNCommunication(ReactApplicationContext reactContext) {
         super(reactContext);
     }
 

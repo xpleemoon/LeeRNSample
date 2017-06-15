@@ -1,4 +1,4 @@
-package com.xpleemoon.sample.rn.module;
+package com.xpleemoon.sample.rn.call;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
@@ -12,9 +12,9 @@ import com.facebook.react.bridge.ReactMethod;
  *
  * @author xpleemoon
  */
-public class LeeReactDialog extends ReactContextBaseJavaModule {
+public class LeeRNDialog extends ReactContextBaseJavaModule {
 
-    public LeeReactDialog(ReactApplicationContext reactContext) {
+    public LeeRNDialog(ReactApplicationContext reactContext) {
         super(reactContext);
     }
 

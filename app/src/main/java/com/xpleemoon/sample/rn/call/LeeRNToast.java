@@ -1,4 +1,4 @@
-package com.xpleemoon.sample.rn.module;
+package com.xpleemoon.sample.rn.call;
 
 import android.widget.Toast;
 
@@ -16,11 +16,11 @@ import javax.annotation.Nullable;
  *
  * @author xpleemoon
  */
-public class LeeReactToast extends ReactContextBaseJavaModule {
+public class LeeRNToast extends ReactContextBaseJavaModule {
     private static final String DURATION_SHORT_KEY = "SHORT";
     private static final String DURATION_LONG_KEY = "LONG";
 
-    public LeeReactToast(ReactApplicationContext reactContext) {
+    public LeeRNToast(ReactApplicationContext reactContext) {
         super(reactContext);
     }
 
