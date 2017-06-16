@@ -7,12 +7,17 @@ import {
     View,
     DeviceEventEmitter,
 } from 'react-native';
+import {StackNavigator} from 'react-navigation';
 import {LeeStyles,}from '../res/style/GlobalStyles';
 import {LeeCommunication,} from './LeeNative';
 import LeeTouchable from './component/LeeTouchable';
 import LeeTextArea from './component/LeeTextArea';
 
-class LeeComm extends React.Component {
+class LeeCommScreen extends React.Component {
+    static navigationOptions = {
+        title: 'RN与原生通信',
+    };
+
     onReceiveEvent = (event) => {
         this.setState({
             text: event.result,
@@ -70,5 +75,9 @@ class LeeComm extends React.Component {
         )
     }
 }
+
+const LeeComm = StackNavigator({
+    LeeComm: {screen: LeeCommScreen},
+});
 
 AppRegistry.registerComponent('LeeComm', () => LeeComm);

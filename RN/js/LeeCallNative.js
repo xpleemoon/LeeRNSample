@@ -6,11 +6,15 @@ import {
     StyleSheet,
     View,
 } from 'react-native';
+import {StackNavigator} from 'react-navigation';
 import {LeeToast, LeeDialog,} from './LeeNative';
 import {LeeStyles} from '../res/style/GlobalStyles';
 import LeeTouchable from './component/LeeTouchable';
 
-class LeeCallNative extends React.Component {
+class LeeCallNativeScreen extends React.Component {
+    static navigationOptions = {
+        title: 'RN调用原生',
+    };
 
     constructor(props) {
         super(props);
@@ -32,5 +36,9 @@ class LeeCallNative extends React.Component {
         )
     }
 }
+
+const LeeCallNative = StackNavigator({
+    LeeCallNative: {screen: LeeCallNativeScreen},
+});
 
 AppRegistry.registerComponent('LeeCallNative', () => LeeCallNative);
