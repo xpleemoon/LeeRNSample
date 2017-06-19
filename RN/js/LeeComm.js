@@ -77,7 +77,7 @@ class LeeCommScreen extends React.Component {
 }
 
 const LeeComm = StackNavigator({
-    LeeComm: {screen: LeeCommScreen},
+    Home: {screen: LeeCommScreen},
 });
 
 AppRegistry.registerComponent('LeeComm', () => LeeComm);

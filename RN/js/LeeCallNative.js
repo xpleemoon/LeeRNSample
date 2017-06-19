@@ -38,7 +38,7 @@ class LeeCallNativeScreen extends React.Component {
 }
 
 const LeeCallNative = StackNavigator({
-    LeeCallNative: {screen: LeeCallNativeScreen},
+    Home: {screen: LeeCallNativeScreen},
 });
 
 AppRegistry.registerComponent('LeeCallNative', () => LeeCallNative);
